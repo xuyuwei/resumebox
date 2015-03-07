@@ -1,0 +1,2 @@
+module ResumesControllerHelper
+end
