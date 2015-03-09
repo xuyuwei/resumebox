@@ -19,7 +19,9 @@
             <div class="navbar-collapse collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
-                    <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
+
+                    <li class="nav-item"> <%= link_to "About",about_path, class: "scrollto" %></li>
+
                     <li class="nav-item"><a class="scrollto" href="#features">Features</a></li>
                     <li class="nav-item"><a class="scrollto" href="#docs">Docs</a></li>
                     <li class="nav-item"><a class="scrollto" href="#license">License</a></li>                        
@@ -36,9 +38,10 @@
         <h2 class="title">Resume<span class="highlight">Box</span></h2>
         <p class="intro">Share and View Internship Resumes</p>
         <div class="btns">
-            <a class="btn btn-cta-secondary" href="#">Signup</a>
+            <%= link_to "Sign Up", signup_path, class: "btn btn-cta-primary" %>
             <a class="btn btn-cta-primary" href="#">Login</a>
         </div>
+        
         <ul class="meta list-inline">
             <li><a href="https://github.com/xuyuwei/resumebox" target="_blank">View on GitHub</a></li>
             <li>Made with <a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a></li>
