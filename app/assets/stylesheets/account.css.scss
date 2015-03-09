@@ -1,0 +1,56 @@
+
+/*account */
+.account {
+  background: #b4ca65;
+  color: #fff;
+  padding-top: 150px;
+}
+.account .title {
+  font-size: 98px;
+  color: #607026;
+  margin-top: 0;
+}
+.account .title .highlight {
+  color: #dd7c4f;
+}
+.account .intro {
+  font-size: 28px;
+  max-width: 680px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.account .btns .btn {
+  margin-right: 15px;
+  font-size: 18px;
+  padding: 8px 30px;
+}
+.account .meta {
+  margin-top: 120px;
+  margin-bottom: 30px;
+  color: #809633;
+}
+.account .meta li {
+  margin-right: 15px;
+}
+.account .meta a {
+  color: #809633;
+}
+.account .meta a:hover {
+  color: #607026;
+}
+.account .social-media {
+  background: #90a93a;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+.account .social-media li {
+  margin-top: 15px;
+}
+.account .social-media li.facebook-like {
+  margin-top: 0;
+  position: relative;
+  top: -5px;
+}
+div .account-container {
+  padding:50px;
+}
