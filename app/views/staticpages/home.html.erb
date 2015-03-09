@@ -20,7 +20,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
 
-                    <li class="nav-item"> <%= link_to "About",about_path, class: "scrollto" %></li>
+                    <li class="nav-item"> <%= link_to "About",about_path %></li>
 
                     <li class="nav-item"><a class="scrollto" href="#features">Features</a></li>
                     <li class="nav-item"><a class="scrollto" href="#docs">Docs</a></li>
@@ -38,8 +38,8 @@
         <h2 class="title">Resume<span class="highlight">Box</span></h2>
         <p class="intro">Share and View Internship Resumes</p>
         <div class="btns">
-            <%= link_to "Sign Up", signup_path, class: "btn btn-cta-primary" %>
-            <a class="btn btn-cta-primary" href="#">Login</a>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-cta-primary" %>
+             <%= link_to "Login", new_user_session_path, class: "btn btn-cta-primary" %>
         </div>
         
         <ul class="meta list-inline">

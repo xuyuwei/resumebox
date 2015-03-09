@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root           'staticpages#home'
   get 'about' => 'staticpages#about'
-  get 'signup' =>'users#new'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
