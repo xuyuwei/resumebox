@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   root           'staticpages#home'
   get 'about' => 'staticpages#about'
   get 'account' => 'users#show'
-
+  get 'uploadresume' => 'resumes#new'
+  
   resources :resumes
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
