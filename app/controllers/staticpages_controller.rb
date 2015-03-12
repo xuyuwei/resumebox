@@ -6,9 +6,6 @@ class StaticpagesController < ApplicationController
 	def home
 	end
 
-	#about page
-	def about
-	end
 
 
 end
