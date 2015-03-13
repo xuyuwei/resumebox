@@ -17,6 +17,10 @@ class ResumesController < ApplicationController
 	def show
 		@resume=Resume.find(params[:id])
 	end
+	def destroy
+		Resume.find(params[:id]).destroy
+		redirect_to :back
+	end
 	def update
 	end
 	def edit
