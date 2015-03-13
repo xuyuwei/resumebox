@@ -6,11 +6,12 @@
 		<%= form_for(@resume) do |f| %>
 			<%= render 'shared/error_messages' %>
 
-      <%= f.label :url %>
-      <%= f.text_field :url, class: 'form-control' %>
+			<%= f.label :url %>
+			<%= f.text_field :url, class: 'form-control' %>
 
-      <%= f.hidden_field :user_id, :value => current_user.id %> 
-
+			<%= f.hidden_field :user_id, :value => current_user.id %> 
+			<%= f.hidden_field :faculty, :value => current_user.faculty %>
+	
       <%= f.submit "Create resume", class: "btn btn-primary" %>
     <% end %>
   </div>

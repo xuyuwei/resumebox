@@ -21,6 +21,22 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :faculty %><br />
+    <%= f.text_field :faculty, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :first_major, "Major"%><br />
+    <%= f.text_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :second_major, "Second Major (If Applicable)" %><br />
+    <%= f.text_field :email, autofocus: true %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
