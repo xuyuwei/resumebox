@@ -29,9 +29,9 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'paperclip'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
-gem 's3_direct_upload'
+gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
