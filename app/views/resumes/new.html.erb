@@ -11,8 +11,11 @@
 				<%= f.text_field :url, class: 'form-control' %>
 				<%= f.hidden_field :user_id, :value => current_user.id %> 
 				<%= f.hidden_field :faculty, :value => current_user.faculty %>
-
-
+				<div class="field">
+				    <%= f.label :resume %><br>
+				    <%= f.file_field :resume %>
+				</div>
+		
 				<%= f.submit "Create resume", class: "btn btn-primary" %>
 				<% end %>
 		  	</div>
