@@ -7,8 +7,15 @@ class ResumesController < ApplicationController
 	end
 	def create
 		@resume = Resume.new(resume_params)
+		
+		@resume.major_list.add(current_user.first_major)
+		if current_user.second_major != nil
+			@resume.major_list.add(current_user.second_major)
+		end
+
 		if @resume.save
-			redirect_to @resume
+			#flash[:success] = "Resume created"      doesn't work, i want it to though
+			redirect_to '/account'
 		
 		else
 			render 'new'
@@ -28,6 +35,6 @@ class ResumesController < ApplicationController
 
 	private	
 		def resume_params
-			params.require(:resume).permit(:url)
+			params.require(:resume).permit(:url, :user_id)
 		end
 end

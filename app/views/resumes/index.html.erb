@@ -3,10 +3,10 @@
 	<div class = "container text-center">
 		<h1> All the resumes are here</h1>
 		<% @resumes.each do |r|%>
-			<h1>Resume</h1>
-			<h4><%= r.id %></h4>
+			<h3><%= r.id %></h3>
+			<h4><%= r.user.email %></h4>
 			<h4><%= r.url %></h4>
-			<%= link_to "delete", r, method: :delete %>
+			
 		<%end %>
 	</div>
 </section>

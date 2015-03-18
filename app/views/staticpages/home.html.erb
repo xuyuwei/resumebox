@@ -1,15 +1,21 @@
 
 
-
 <!-- ******PROMO****** -->
 <section id="promo" class="promo section offset-header">
     <div class="container text-center">
         <h2 class="title">Resume<span class="highlight">Box</span></h2>
         <p class="intro">Share and View Internship Resumes</p>
-        <div class="btns">
-            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-cta-primary" %>
-             <%= link_to "Login", new_user_session_path, class: "btn btn-cta-primary" %>
-        </div>
+        <% if !user_signed_in? %>
+            <div class="btns">
+                <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-cta-primary" %>
+                 <%= link_to "Login", new_user_session_path, class: "btn btn-cta-primary" %>
+            </div>
+        <% else %>
+            <div class="btns">
+                <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "btn btn-cta-primary" %>
+            </div>
+        <% end %>
+
         
         <ul class="meta list-inline">
             <li><a href="https://github.com/xuyuwei/resumebox" target="_blank">View on GitHub</a></li>            
@@ -23,7 +29,6 @@
         </div>
     </div>
 </section><!--//promo-->
-
 <!-- ******ABOUT****** --> 
 <section id="about" class="about section">
     <div class="container">
