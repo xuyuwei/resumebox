@@ -11,9 +11,7 @@
                  <%= link_to "Login", new_user_session_path, class: "btn btn-cta-primary" %>
             </div>
         <% else %>
-            <div class="btns">
                 <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "btn btn-cta-primary" %>
-            </div>
         <% end %>
 
         
