@@ -2,8 +2,6 @@
 <section id = "resume" class = "resume section offset-header">
 	<div class = "container text-center">
 		<h1> All the resumes are here</h1>
-		
-
 		<% @resumes.each do |r|%>
 			<h3><%= r.id %></h3>
 			<h4><%= r.user.email %></h4>
