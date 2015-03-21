@@ -22,3 +22,37 @@
   font-size: 18px;
   padding: 8px 30px;
 }
+
+.login {
+  background: url(signin.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height:100vh;
+
+  color:#fff;
+}
+
+.login-input{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -40%);
+  
+}
+
+.login-form{
+  background: #446CB3;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  .form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .signup-form {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

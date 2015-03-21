@@ -181,7 +181,7 @@ pre code {
 }
 /* ======= Promo Section ======= */
 .promo {
-  background: #17baef;
+  background: url(signin.png) no-repeat;
   color: #fff;
   padding-top: 150px;
 }

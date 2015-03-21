@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20150318213959) do
   create_table "resumes", force: :cascade do |t|
     t.string   "url"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "faculty"
     t.string   "resume_file_name"
     t.string   "resume_content_type"

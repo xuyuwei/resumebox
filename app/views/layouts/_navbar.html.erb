@@ -1,0 +1,34 @@
+<!-- ******HEADER****** --> 
+<header id="header" class="header">  
+    <div class="container">            
+        <h1 class="logo pull-left">
+            <a href="/">
+                <span class="logo-title">ResumeBox</span>
+            </a>
+        </h1><!--//logo-->              
+        <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button><!--//nav-toggle-->
+            </div><!--//navbar-header-->            
+            <div class="navbar-collapse collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active nav-item sr-only"><a class="scrollto" href="">Home</a></li>
+
+                     
+                    <% if user_signed_in? %>
+                        <li class="nav-item"><%= link_to "All Resumes", resumes_path %></li>
+                        <li class="nav-item"><%= link_to "My Account", account_path %></li>
+                    <% else %>
+                        <li class="nav-item"><a class="scrollto" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#docs">Docs</a></li>
+                    <% end %>
+                </ul><!--//nav-->
+            </div><!--//navabr-collapse-->
+        </nav><!--//main-nav-->
+    </div>
+</header><!--//header-->
