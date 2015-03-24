@@ -1,4 +1,6 @@
 class ResumesController < ApplicationController
+	include ResumesHelper
+
 	def index
 		@resumes = Resume.all
 	end

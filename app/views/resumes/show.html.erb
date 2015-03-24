@@ -1,8 +1,9 @@
-
+<%=render 'layouts/navbar'%>
 <section id = "resume" class = "resume section offset-header">
 	<div class = "container text-center">
 		<h2>you created a resume!!! yay</h2>
-		<%= @resume.url %>
-		<%= @resume.resume%>
+		
+	<img class = "img-responsive" src = <%=get_image_url(@resume.id, @resume.resume_file_name)%> >
+		<p> <%=get_image_url(@resume.id, @resume.resume_file_name)%> </p>
 	</div>
 </section>

@@ -2,8 +2,19 @@
 .resume {
   background: #b4ca65;
   padding-top: 150px;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 
+.resume-pic {
+  height: 70vh;
+}
+
+.resume-thumbnail {
+  max-height: 100%;
+}
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;

@@ -2,12 +2,14 @@
 <section id = "resume" class = "resume section offset-header">
 	<div class = "container text-center">
 		<h1> All the resumes are here</h1>
-		<% @resumes.each do |r|%>
-			<h3><%= r.id %></h3>
-			<h4><%= r.user.email %></h4>
-			<h4><%= r.url %></h4>
-			
-		<%end %>
+		<div class = "row" %>
+			<% @resumes.each do |r|%>
+				<div class = "col-md-4 col-xs-12 col-lg-3" %>
+					<img class="resume-thumbnail" src = <%= get_thumbnail_url(r.id, r.resume_file_name) %> >
+					<%= link_to "view", resume_path(r) %>	
+				</div>
+			<%end %>
+		</div>
 	</div>
 </section>
 
