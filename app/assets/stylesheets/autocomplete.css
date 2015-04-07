@@ -1,7 +1,7 @@
 /** resets **/
 
 
-#searchfield { display: block; width: 100%; text-align: center; margin-bottom: 0px; }
+#searchfield { display: block; width: 100%; text-align: left; margin-bottom: 0px; }
 
 #searchfield form {
   display: inline-block;
