@@ -15,18 +15,15 @@ ActiveRecord::Schema.define(version: 20150318213959) do
 
   create_table "resumes", force: :cascade do |t|
     t.string   "url"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "faculty"
     t.string   "resume_file_name"
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
   end
-
-  add_index "resumes", ["user_id", "created_at"], name: "index_resumes_on_user_id_and_created_at"
-  add_index "resumes", ["user_id"], name: "index_resumes_on_user_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
