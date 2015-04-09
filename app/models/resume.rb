@@ -4,11 +4,11 @@ class Resume < ActiveRecord::Base
 	#list of faculties and majors
 	acts_as_taggable_on :companies, :majors
 	validates :user_id, presence: true
+	validates :resume, presence: true
 	has_attached_file :resume, 
 		:styles => {
-			fullsize: {geometry: "100%", format: :png,:processors => [:pdfprocessor]},
-	 		thumbnail: {geometry: "100%", format: :png,:processors => [:pdfprocessor_small]}
+			fullsize: {geometry: "100%", format: :jpg, :processors => [:pdfprocessor]}
 	 	}
-	validates_attachment :resume, :content_type => { :content_type => %w(application/pdf application/msword) }
+	validates_attachment :resume, :content_type => { :content_type => %w(application/pdf) }
 		
 end

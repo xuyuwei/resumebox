@@ -4,21 +4,21 @@
 		<% provide(:title, 'Add Resume') %>
 		<h1>Add Resume</h1>
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<%= form_for(@resume) do |f| %>
+			<div class="col-md-4">
+				<%= form_for(@resume) do |f| %> 
 				<%= render 'shared/error_messages' %>
-				<%= f.label :url %>
-				<%= f.text_field :url, class: 'form-control' %>
 				<%= f.hidden_field :user_id, :value => current_user.id %> 
 				<%= f.hidden_field :faculty, :value => current_user.faculty %>
 				<div class="field">
 				    <%= f.label :resume %><br>
-				    <%= f.file_field :resume %>
+				    <%= f.file_field :resume%>
 				</div>
-		
+			
 				<%= f.submit "Create resume", class: "btn btn-primary" %>
 				<% end %>
+				
 		  	</div>
 		</div>
 	</div>
 </section>
+

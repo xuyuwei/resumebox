@@ -1,0 +1,35 @@
+<%= render 'layouts/navbar' %>
+<section id="resume" class="resume section offset-header">
+    <div class = "container text-center">
+        <h2>Edit your resume</h2>
+        <h3>Hide what you don't want others to see</h3>
+        
+    <canvas id = "myCanvas" style = "background:#FFF;" width = "800" height = "800"></canvas>
+    </div>
+</section><!--//promo-->
+
+<script>
+	var canvas = document.getElementById('myCanvas'),
+  var context = canvas.getContext('2d');
+
+  context.beginPath();
+  context.moveTo(75,50);
+  context.lineTo(125,50);
+   context.lineTo(150, 93);
+    context.lineTo(125, 136);
+  context.stroke();
+
+
+  make_base();
+
+  function make_base()
+  {
+    base_image = new Image();
+    base_image.onload = function(){
+      context.drawImage(this, 100, 100);
+    }
+    base_image.src = 'https://resumebox-bucket.s3.amazonaws.com/resumes/resumes/000/000/049/fullsize/resume.jpg';
+    //base_image.src = '<%=get_image_url(@resume.id, @resume.resume_file_name)%>';
+  }
+
+</script>

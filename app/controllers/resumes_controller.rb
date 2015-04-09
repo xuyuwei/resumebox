@@ -17,6 +17,7 @@ class ResumesController < ApplicationController
 
 		if @resume.save
 			#flash[:success] = "Resume created"      doesn't work, i want it to though
+			@resume.url = get_image_url(@resume.id, @resume.resume_file_name)
 			redirect_to '/account'
 		
 		else
@@ -24,7 +25,11 @@ class ResumesController < ApplicationController
 		end
 	end
 	def show
-		@resume=Resume.find(params[:id])
+		if user_signed_in?
+			@resume=Resume.find(params[:id])
+		else
+			redirect_to '/users/sign_in'
+		end
 	end
 	def destroy
 		Resume.find(params[:id]).destroy
@@ -33,10 +38,16 @@ class ResumesController < ApplicationController
 	def update
 	end
 	def edit
+
+		if current_user.id == Resume.find(params[:id]).user_id
+			@resume = Resume.find(params[:id])
+		else
+			redirect_to '/users/sign_in'
+		end
 	end
 
 	private	
 		def resume_params
-			params.require(:resume).permit(:url, :user_id, :resume)
+			params.require(:resume).permit(:url, :user_id, :resume, :resume_file_name)
 		end
 end
