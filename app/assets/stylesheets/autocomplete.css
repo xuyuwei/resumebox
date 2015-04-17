@@ -1,7 +1,7 @@
 /** resets **/
 
 
-#searchfield { display: block; width: 100%; text-align: left; margin-bottom: 0px; }
+#searchfield { display: block; width: 100%; text-align: right; margin-bottom: 0px; }
 
 #searchfield form {
   display: inline-block;
@@ -32,7 +32,7 @@
 
 
 
-.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
-.autocomplete-suggestion { padding: 10px 2px; font-size: 1em; white-space: nowrap; overflow: hidden; }
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; height: auto; }
+.autocomplete-suggestion { padding: 10px 2px; font-size: 1em; white-space: nowrap; overflow: auto; }
 .autocomplete-selected { background: #f0f0f0; }
 .autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }

@@ -1,4 +1,5 @@
 
+
 <!-- ******PROMO****** -->
 <section id="signup" class="signup section">
     <div class="container">      
@@ -24,18 +25,21 @@
 
                     <div class="field form-group">
                         <%= f.label :faculty %><br />
-                        <%= f.text_field :faculty, autofocus: true, class: "form-control", placeholder: "Ex. Math"%>
+                        <%= f.text_field :faculty, autofocus: true, class: "form-control", id: "autocompletef", placeholder: "Ex. Math"%>
                     </div>
 
                     <div class="field form-group">
                         <%= f.label :first_major, "Major"%><br />
-                        <%= f.text_field :first_major, autofocus: true, class: "form-control", placeholder: "Ex. Pure Mathematics"%>
+                        <%= f.text_field :first_major, autofocus: true, class: "form-control autocompletem", placeholder: "Ex. Pure Mathematics"%>
                     </div>
 
                     <div class="field form-group">
                         <%= f.label :second_major, "Second Major (If Applicable)" %>
-                        <%= f.text_field :second_major, autofocus: true, class: "form-control", placeholder: "Ex. Applied Mathematics"%>
+                        <%= f.text_field :second_major, autofocus: true, class: "form-control autocompletem", placeholder: "Ex. Applied Mathematics"%>
                     </div>
+
+
+
                         <%= f.submit "Sign up", class: "btn btn-default" %>
                 <% end %>
             </div>
