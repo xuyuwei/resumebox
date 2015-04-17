@@ -33,9 +33,7 @@ $(function(){
   ];
   
   // setup autocomplete function pulling from currencies[] array
-  $('.autocompletem').autocomplete({
-    lookup: majors
-  });
-  
-
+    $('.autocompletem').autocomplete({
+        lookup: majors
+    });
 });
