@@ -2,9 +2,14 @@ class ResumesController < ApplicationController
 	include ResumesHelper
 
 	def index
+
 		if params[:company]
-			lcompany = params[:company].gsub(/\s+/, "").downcase
-			@resumes = Resume.tagged_with(lcompany)
+			lcompany = "_"+params[:company].gsub(/\s+/, "").downcase
+			if lcompany == ""
+				@resumes = Resume.all
+			else
+				@resumes = Resume.tagged_with(lcompany)
+			end
 		else
 			@resumes = Resume.all
 		end
@@ -21,7 +26,7 @@ class ResumesController < ApplicationController
 		end
 
 		@resume.company_list.each do |c|
-			@resume.lcompany_list.add(c.gsub(/\s+/, "").downcase)
+			@resume.lcompany_list.add("_"+c.gsub(/\s+/, "").downcase)
 		end
 
 		if @resume.save

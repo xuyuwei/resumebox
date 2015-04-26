@@ -10,5 +10,11 @@ class Resume < ActiveRecord::Base
 			fullsize: {geometry: "100%", format: :jpg, :processors => [:pdfprocessor]}
 	 	}
 	validates_attachment :resume, :content_type => { :content_type => %w(application/pdf) }
-		
+	
+	# def self.search(lcompany)
+	# 	if search
+	# 		return Resume.tagged_with(lcompany)
+	# 	end
+	# end
+
 end
