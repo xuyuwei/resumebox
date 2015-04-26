@@ -3,8 +3,8 @@
 <!-- ******PROMO****** -->
 <section id="promo" class="promo section offset-header">
     <div class="container text-center">
-        <h2 class="title">Resume<span class="highlight">Box</span></h2>
-        <p class="intro">Share and View Internship Resumes</p>
+        <h2 class="title">Share and View Resumes</h2>
+        <p class="intro">With Fellow Waterloo Students</p>
         <% if !user_signed_in? %>
             <div class="btns">
                 <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-cta-primary" %>
@@ -32,62 +32,20 @@
     <div class="container">
         <h2 class="title text-center">What is ResumeBox?</h2>
         <p class="intro text-center">ResumeBox is a platform where students are able to share their resumes and view other resumes in order to help with the internship/job hunting process. Most people post their resumes on their LinkedIn profile or personal website anyways, so we think of this website as an extension of those online profiles. Upload your resume today and begin viewing other people's resumes!</p>
-        <div class="row">
-            <div class="item col-md-4 col-sm-6 col-xs-12">
-                <div class="icon-holder">
-                    <i class="fa fa-heart"></i>
+        <h3 class="title text-center">A few of the resumes on ResumeBox</h3>
+         <div class="row">
+            <% @resumes.each do |r| %>
+                <% if user_signed_in? %>
+                <div class="item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= link_to image_tag(get_image_url(r.id, r.resume_file_name), class: "resume-preview"), resume_path(r) %>
                 </div>
-                <div class="content">
-                    <h3 class="sub-title">Designed for developers</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                </div><!--//content-->
-            </div><!--//item-->
-            <div class="item col-md-4 col-sm-6 col-xs-12">
-                <div class="icon-holder">
-                    <i class="fa fa-clock-o"></i>
+                <% else %>
+                <div class="item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <%= image_tag(get_image_url(r.id, r.resume_file_name), class: "resume-preview") %>
                 </div>
-                <div class="content">
-                    <h3 class="sub-title">Time saver</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                </div><!--//content-->
-            </div><!--//item-->
-            <div class="item col-md-4 col-sm-6 col-xs-12">
-                <div class="icon-holder">
-                    <i class="fa fa-crosshairs"></i>
-                </div>
-                <div class="content">
-                    <h3 class="sub-title">UX-centred</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                </div><!--//content-->
-            </div><!--//item-->           
-            <div class="clearfix visible-md"></div>    
-            <div class="item col-md-4 col-sm-6 col-xs-12">
-                <div class="icon-holder">
-                    <i class="fa fa-tablet"></i>
-                </div>
-                <div class="content">
-                    <h3 class="sub-title">Mobile-friendly</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                </div><!--//content-->
-            </div><!--//item-->                
-            <div class="item col-md-4 col-sm-6 col-xs-12">
-                <div class="icon-holder">
-                    <i class="fa fa-code"></i>
-                </div>
-                <div class="content">
-                    <h3 class="sub-title">Easy to customise</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                </div><!--//content-->
-            </div><!--//item-->
-            <div class="item col-md-4 col-sm-6 col-xs-12">
-                <div class="icon-holder">
-                    <i class="fa fa-coffee"></i>
-                </div>
-                <div class="content">
-                    <h3 class="sub-title">LESS files included</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                </div><!--//content-->
-            </div><!--//item-->               
+                <%end %>
+            <% end %>
+            <div class="clearfix visible-md"></div> 
         </div><!--//row-->            
     </div><!--//container-->
 </section><!--//about-->

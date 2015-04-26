@@ -1,9 +1,17 @@
 <%= render 'layouts/navbar' %>
 
+
 <section id = "resume" class = "resume section offset-header">
+	
 	<div class = "container text-center">
+
+		
 		<h1> All the resumes are here</h1>
 		<div class = "row" %>
+			<%= form_tag resumes_path, :method => 'get' do %>
+				<%= text_field_tag :company, params[:company], class: "form-control", placeholder:"Enter a company" %>
+				<%= submit_tag "Search" %>
+			<% end %> 
 			<% @resumes.each do |r|%>
 				<div class = "col-md-4 col-xs-12 col-lg-3" %>
 					

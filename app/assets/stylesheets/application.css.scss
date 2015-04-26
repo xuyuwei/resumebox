@@ -15,3 +15,9 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@font-face {
+  font-family: "Proxima Nova ScOsf";
+  src: url("../fonts/Proxima Nova ScOsf Light.otf");
+  font-weight: 300; 
+}

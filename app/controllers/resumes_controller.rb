@@ -2,7 +2,17 @@ class ResumesController < ApplicationController
 	include ResumesHelper
 
 	def index
-		@resumes = Resume.all
+
+		if params[:company]
+			lcompany = "_"+params[:company].gsub(/\s+/, "").downcase
+			if lcompany == ""
+				@resumes = Resume.all
+			else
+				@resumes = Resume.tagged_with(lcompany)
+			end
+		else
+			@resumes = Resume.all
+		end
 	end
 	def new
 		@resume = Resume.new
@@ -13,6 +23,10 @@ class ResumesController < ApplicationController
 		@resume.major_list.add(current_user.first_major)
 		if current_user.second_major != nil
 			@resume.major_list.add(current_user.second_major)
+		end
+
+		@resume.company_list.each do |c|
+			@resume.lcompany_list.add("_"+c.gsub(/\s+/, "").downcase)
 		end
 
 		if @resume.save
@@ -48,6 +62,6 @@ class ResumesController < ApplicationController
 
 	private	
 		def resume_params
-			params.require(:resume).permit(:url, :user_id, :resume, :resume_file_name)
+			params.require(:resume).permit(:url, :user_id, :resume, :resume_file_name, :company_list)
 		end
 end

@@ -2,6 +2,8 @@
 <section id = "resume" class = "resume section offset-header">
 	<div class = "container text-center">
 		<% provide(:title, 'Add Resume') %>
+
+		
 		<h1>Add Resume</h1>
 		<div class="row">
 			<div class="col-md-4">
@@ -9,6 +11,9 @@
 				<%= render 'shared/error_messages' %>
 				<%= f.hidden_field :user_id, :value => current_user.id %> 
 				<%= f.hidden_field :faculty, :value => current_user.faculty %>
+
+				<%= f.label :company_list, "Which companies gave you interviews? (Separate using commas)" %>
+				<%= f.text_field :company_list, class: "form-control", placeholder: "Ex. Google, Facebook" %>
 				<div class="field">
 				    <%= f.label :resume %><br>
 				    <%= f.file_field :resume%>

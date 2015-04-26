@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root           'staticpages#home'
   get 'about' => 'staticpages#about'
   get 'account' => 'users#show'
+  get 'resumes/companies/*company' => 'resumes#index', as: 'company'
 
   
   resources :resumes
