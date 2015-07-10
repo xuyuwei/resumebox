@@ -13,8 +13,10 @@ class Resume < ActiveRecord::Base
 	  },
 		:processors => [:pdfprocessor],
 		:styles => {
-			:fullsize => ["100%",:jpg]
-		}
+			:fullsize => ["50x50",:jpg],
+			:small => ["50x50",:jpg]
+		},
+		:convert_options => {:fullsize => '-quality 90'}
 	validates_attachment_content_type :resume, :content_type => %w(application/pdf)
 
 end
