@@ -5,10 +5,16 @@ class Resume < ActiveRecord::Base
 	acts_as_taggable_on :companies, :majors
 	validates :user_id, presence: true
 	validates :resume, presence: true
-	has_attached_file :resume, 
+	has_attached_file :resume,
+		:bucket => ENV["bucket"],
+	  :s3_credentials => {
+	    :access_key_id => ENV["AWS_ACCESS_KEY_ID"],
+	    :secret_access_key => ENV["AWS_SECRET_ACCESS_KEY"]
+	  },
+		:processors => [:pdfprocessor],
 		:styles => {
-			fullsize: {geometry: "100%", format: :jpg, :processors => [:pdfprocessor]}
-	 	}
-	validates_attachment :resume, :content_type => { :content_type => %w(application/pdf) }
-		
+			:fullsize => ["100%",:jpg]
+		}
+	validates_attachment_content_type :resume, :content_type => %w(application/pdf)
+
 end
