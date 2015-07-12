@@ -2,14 +2,11 @@
 
 <section id = "resume" class = "resume section offset-header">
 	<div class = "container text-center">
-		<h1> All the resumes are here</h1>
-		<div class = "row" %>
 			<% @resumes.each do |r|%>
 				<div class = "col-md-4 col-xs-12 col-lg-3" %>
-
 					<td><%= image_tag r.resume.url(:fullsize) %></td>
+					<p><%= r.user.name%></p>
 				</div>
 			<%end %>
-		</div>
 	</div>
 </section>

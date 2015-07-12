@@ -1,14 +1,18 @@
 <!-- ******PROMO****** -->
 <section id="login" class="login">
-    <div class="login-input container">      
+    <div class="login-input container">
         <div class = "row">
             <div class = "login-form col-sm-12 col-lg-6 col-lg-offset-3">
                 <h1 class = "text-center">Sign Up</h1>
-                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "signup-form form-horizontal"}) do |f| %>
+                <%= form_for @user, html: {class: "signup-form form-horizontal"} do |f| %>
                     <%= devise_error_messages! %>
                     <div class="form-group">
+                        <%= f.label :name%>
+                        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+                    </div>
+                    <div class="form-group">
                         <%= f.label :email%>
-                        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+                        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
                     </div>
 
                    <div class="form-group">
@@ -22,18 +26,18 @@
                     </div>
 
                     <div class="field form-group">
-                        <%= f.label :faculty %><br />
-                        <%= f.text_field :faculty, autofocus: true, class: "form-control", placeholder: "Ex. Math"%>
+                        <%= f.label :faculty %>
+                        <%= f.text_field :faculty, class: "form-control", placeholder: "Ex. Math"%>
                     </div>
 
                     <div class="field form-group">
-                        <%= f.label :first_major, "Major"%><br />
-                        <%= f.text_field :first_major, autofocus: true, class: "form-control", placeholder: "Ex. Pure Mathematics"%>
+                        <%= f.label :first_major, "Major"%>
+                        <%= f.text_field :first_major, class: "form-control", placeholder: "Ex. Pure Mathematics"%>
                     </div>
 
                     <div class="field form-group">
                         <%= f.label :second_major, "Second Major (If Applicable)" %>
-                        <%= f.text_field :second_major, autofocus: true, class: "form-control", placeholder: "Ex. Applied Mathematics"%>
+                        <%= f.text_field :second_major, class: "form-control", placeholder: "Ex. Applied Mathematics"%>
                     </div>
                         <%= f.submit "Sign up", class: "btn btn-default" %>
                 <% end %>
@@ -42,6 +46,3 @@
 
     </div><!--//container-->
 </section>
-
-
-
