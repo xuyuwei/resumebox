@@ -4,7 +4,7 @@
         <div class = "row">
             <div class = "login-form col-sm-12 col-lg-6 col-lg-offset-3">
                 <h1 class = "text-center">Sign Up</h1>
-                <%= form_for @user, html: {class: "signup-form form-horizontal"} do |f| %>
+                <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
                     <%= devise_error_messages! %>
                     <div class="form-group">
                         <%= f.label :name%>
