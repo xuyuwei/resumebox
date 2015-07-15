@@ -2,7 +2,6 @@
 <section id="account" class="account section offset-header">
     <div class="account-container container text-center">
         <h2>My Account</h2>
-        <h3><%= @user.email %> </h3>
         <br>
     </div><!--//container-->
 
@@ -10,12 +9,17 @@
     	<h2>My Resumes</h2>
     	<% if @user.resumes.any? %>
     		<h4>(<%= @user.resumes.count %>) resumes. </h4>
-    		<ol class="resumes">
-    			<%=render @resumes %>
-    		</ol>
+        <% @user.resumes.each do |r|%>
+
+        <li >
+        	<span class="timestamp"> Posted <%= time_ago_in_words(r.created_at) %> ago. </span>
+        	<%= link_to "delete", r, method: :delete %>
+          <%= link_to "edit", edit_resume_path(r) %>
+        </li>
+        <% end %>
     	<% end %>
     </div>
-    
+
     <div class = "container">
         <button> <%= link_to "Add a Resume", new_resume_path, :class => "btn btn-primary" %>, </button>
     </div>

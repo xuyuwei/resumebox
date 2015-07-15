@@ -45,9 +45,17 @@ class ResumesController < ApplicationController
 			redirect_to '/users/sign_in'
 		end
 	end
-
+	def resumesarts
+		@resumes = Resume.all
+	end
+	def resumesmath
+		@resumes = Resume.all
+	end
+	def resumesengineering
+		@resumes = Resume.all
+	end
 	private
 		def resume_params
-			params.require(:resume).permit(:url, :user_id, :resume, :resume_file_name)
+			params.require(:resume).permit(:url, :user_id, :resume, :resume_file_name, :faculty)
 		end
 end

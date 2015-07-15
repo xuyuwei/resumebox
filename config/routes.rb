@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   root           'staticpages#home'
   get 'about' => 'staticpages#about'
   get 'account' => 'users#show'
+  get 'resumesmath' => 'resumes#resumesmath'
+  get 'resumesarts' => 'resumes#resumesarts'
+  get 'resumesengineering' => 'resumes#resumesengineering'
 
 
   resources :resumes

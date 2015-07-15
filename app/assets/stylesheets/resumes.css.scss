@@ -7,8 +7,22 @@
     max-height: 100%;
     max-width: 100%;
   }
+  color: #fff;
 }
+.resume a{
+  color: #ADD8E6;
+  text-decoration: underline;
+}
+.resume .links{
+  font-size: 20px;
+  text-align: left;
+  padding-bottom: 30px;
 
+}
+.resume span{
+  margin-left: 90px;
+  padding-bottom: 30px;
+}
 .resume-pic {
   height: 70vh;
 }
@@ -20,7 +34,7 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  
+
 }
 
 input {
@@ -41,4 +55,3 @@ input {
     color: #a94442;
   }
 }
-

@@ -1,7 +1,7 @@
 <%=render 'layouts/navbar'%>
 <section id = "resume" class = "resume section offset-header">
 	<div class = "container text-center">
-		<h2>you created a resume!!! yay</h2>
+		<h2><%= @resume.user.name %>'s resume</h2>
 	<p><%=@resume.id%><p>
 		<td><%= image_tag @resume.resume.url(:fullsize) %></td>
 	</div>
